@@ -1,10 +1,20 @@
 // sw.js (Hub offline cache v1)
-const CACHE_NAME = "apz-hub-v1";
+const CACHE_NAME = "apz-hub-v2";
 const ASSETS = [
-  "/",                 // hub root
+  "/",                 
   "/index.html",
   "/apple-touch-icon.png",
   "/icon-512.png",
+
+  // 앱(양식)도 미리 캐시
+  "/oe-record/",
+  "/oe-record/index.html",
+  "/ap-training-record/",
+  "/ap-training-record/index.html",
+
+  // 앱이 쓰는 CDN도 미리 캐시 (오프라인 깨짐 방지 핵심)
+  "https://cdn.tailwindcss.com",
+  "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js",
 ];
 
 self.addEventListener("install", (event) => {
