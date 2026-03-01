@@ -111,6 +111,12 @@
     APZ Flight Operations Digital Platform v1.0<br>
     Controlled Distribution
   </div>
-
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/sw.js").catch(console.error);
+    });
+  }
+</script>
 </body>
 </html>
